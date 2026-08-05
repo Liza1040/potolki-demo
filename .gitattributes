@@ -1,0 +1,11 @@
+# Единые переносы строк: в репозитории всегда LF, у сборки на Linux нет сюрпризов
+* text=auto eol=lf
+
+# Бинарники — не трогать переносы (иначе шрифты и картинки повредятся)
+*.ttf   binary
+*.woff  binary
+*.woff2 binary
+*.png   binary
+*.jpg   binary
+*.webp  binary
+*.ico   binary

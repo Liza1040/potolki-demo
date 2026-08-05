@@ -6,6 +6,7 @@ import { QuizSection } from "@/components/sections/QuizSection";
 import { WhyUs } from "@/components/sections/WhyUs";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Pricing } from "@/components/sections/Pricing";
+import { Works } from "@/components/sections/Works";
 import { Reviews } from "@/components/sections/Reviews";
 import { Faq } from "@/components/sections/Faq";
 import { FinalCta } from "@/components/sections/FinalCta";
@@ -23,6 +24,7 @@ export default function Home() {
         <WhyUs content={content.whyUs} />
         <HowItWorks content={content.howItWorks} />
         <Pricing content={content.pricing} />
+        <Works content={content.works} />
         <Reviews content={content.reviews} />
         <Faq content={content.faq} />
         <FinalCta content={content.finalCta} legal={content.legal} />

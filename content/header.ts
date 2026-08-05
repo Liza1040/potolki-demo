@@ -10,10 +10,10 @@ export const header = {
   company: business.name,
   phone: { label: business.phone.display, href: business.phone.href },
   schedule: business.hours.humanShort,
-  // Работы вернутся вместе с секцией галереи (ждёт фото).
   nav: [
     { label: "Этапы", href: "#how-it-works" },
     { label: "Цены", href: "#pricing" },
+    { label: "Работы", href: "#works" },
     { label: "Отзывы", href: "#reviews" },
     { label: "Вопросы", href: "#faq" },
   ],

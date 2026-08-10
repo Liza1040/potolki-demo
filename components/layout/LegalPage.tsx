@@ -1,7 +1,20 @@
 import Link from "next/link";
 
-import type { LegalPageContent } from "@/content/types";
 import { Container } from "@/components/ui/Container";
+
+/** Тип контента страницы принадлежит блоку — совпадает по форме с шаблоном
+ *  legal-content.template.ts. */
+export interface LegalSection {
+  readonly heading: string;
+  readonly paragraphs: readonly string[];
+}
+
+export interface LegalPageContent {
+  readonly title: string;
+  readonly updated: string;
+  readonly intro: string;
+  readonly sections: readonly LegalSection[];
+}
 
 interface LegalPageProps {
   readonly content: LegalPageContent;
@@ -12,7 +25,7 @@ interface LegalPageProps {
 /** Шаблон юридической страницы. Переиспользуется политикой и согласием. */
 export function LegalPage({ content, companyName, backLabel }: LegalPageProps) {
   return (
-    <main className="bg-white py-12 sm:py-16">
+    <main className="bg-bg py-12 sm:py-16">
       <Container className="max-w-3xl">
         <Link
           href="/"

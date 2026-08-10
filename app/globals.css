@@ -1,8 +1,20 @@
 @import "tailwindcss";
 
+/**
+ * Токены темы. Обязательный набор задан контрактом kit (`kit/CONVENTIONS.md`,
+ * п. 4): блоки набора не знают, светлая тема или тёмная, и цветовых литералов
+ * в них нет — значения приходят отсюда.
+ */
 @theme {
   --color-bg: #ffffff;
   --color-surface: #f4f6f9;
+  /* поверхность карточки над фоном страницы */
+  --color-panel: #ffffff;
+  /* вложенная плашка внутри карточки: заметка, подложка иконки, disabled */
+  --color-elevated: #f4f6f9;
+  /* фон поля ввода и невыбранного варианта: здесь совпадает с карточкой */
+  --color-field: #ffffff;
+
   --color-ink: #101828;
   --color-muted: #667085;
   --color-brand: #1d4ed8;
@@ -10,7 +22,26 @@
   --color-brand-soft: #eff4ff;
   --color-cta: #f59e0b;
   --color-cta-dark: #d97706;
+  /* текст на заливке: на синем белый, на янтарном тёмный */
+  --color-on-brand: #ffffff;
+  --color-on-cta: #101828;
+
+  /* line — декоративные рамки и разделители, контраст не нормируется */
   --color-line: #e4e7ec;
+  /**
+   * control — граница интерактивного контрола (поле, вариант выбора, ghost).
+   * WCAG 1.4.11 требует 3:1 к соседнему фону. Раньше здесь стоял line
+   * (#e4e7ec = 1.24:1) — поле выглядело нарисованным, а не контролом.
+   * #858ea0 даёт 3.29 на белом и 3.04 на surface.
+   */
+  --color-control: #858ea0;
+
+  --color-ok: #15803d;
+  --color-ok-soft: #dcfce7;
+  --color-danger: #dc2626;
+  --color-danger-border: #ef4444;
+  --color-danger-soft: #fef2f2;
+  --color-danger-line: #fecaca;
 
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
 

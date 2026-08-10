@@ -14,10 +14,16 @@ const base =
   "transition-colors duration-150 disabled:cursor-not-allowed disabled:opacity-60 " +
   "select-none text-center";
 
+/**
+ * Цвет текста на заливке — отдельные токены on-cta и on-brand, а не ink/white:
+ * на светлой теме это тёмный текст на янтарном и белый на синем, на тёмной —
+ * оба тёмные. Зашитый white провалил бы контраст на золотой кнопке (2.8:1).
+ */
 const variants: Record<Variant, string> = {
-  cta: "bg-cta text-ink hover:bg-cta-dark active:bg-cta-dark shadow-sm",
-  brand: "bg-brand text-white hover:bg-brand-dark active:bg-brand-dark",
-  ghost: "border border-line bg-white text-ink hover:border-brand hover:text-brand",
+  cta: "bg-cta text-on-cta hover:bg-cta-dark active:bg-cta-dark shadow-sm",
+  brand: "bg-brand text-on-brand hover:bg-brand-dark active:bg-brand-dark",
+  ghost:
+    "border border-control bg-panel text-ink hover:border-brand hover:text-brand",
 };
 
 const sizes: Record<Size, string> = {

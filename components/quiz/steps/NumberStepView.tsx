@@ -33,10 +33,10 @@ export function NumberStepView({
             onChange(digits === "" ? undefined : Number(digits));
           }}
           className={
-            "h-16 w-full rounded-xl border-2 bg-white pl-4 pr-16 text-2xl font-extrabold " +
+            "h-16 w-full rounded-xl border-2 bg-field pl-4 pr-16 text-2xl font-extrabold " +
             "text-ink outline-none transition-colors placeholder:font-bold " +
-            "placeholder:text-muted/50 focus:border-brand " +
-            (error !== undefined ? "border-red-500" : "border-line")
+            "placeholder:text-muted focus:border-brand " +
+            (error !== undefined ? "border-danger-border" : "border-control")
           }
         />
         <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-lg font-bold text-muted">
@@ -57,7 +57,7 @@ export function NumberStepView({
                 "transition-colors " +
                 (value === preset.value
                   ? "border-brand bg-brand-soft text-brand"
-                  : "border-line bg-white text-ink hover:border-brand/40")
+                  : "border-control bg-field text-ink hover:border-brand/60")
               }
             >
               {preset.label}
@@ -67,7 +67,7 @@ export function NumberStepView({
       )}
 
       {error !== undefined && (
-        <p id={errorId} className="mt-3 text-[14px] font-medium text-red-600">
+        <p id={errorId} className="mt-3 text-[14px] font-medium text-danger">
           {error}
         </p>
       )}

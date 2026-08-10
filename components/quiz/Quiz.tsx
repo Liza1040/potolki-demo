@@ -129,8 +129,8 @@ export function Quiz({
 
   if (state.status === "success") {
     return (
-      <div className="quiz-step-enter rounded-card border border-line bg-white p-5 shadow-sm sm:p-8">
-        <span className="flex size-12 items-center justify-center rounded-full bg-green-100 text-green-700">
+      <div className="quiz-step-enter rounded-card border border-line bg-panel p-5 shadow-sm sm:p-8">
+        <span className="flex size-12 items-center justify-center rounded-full bg-ok-soft text-ok">
           <Icon name="check" className="size-6" />
         </span>
 
@@ -153,7 +153,7 @@ export function Quiz({
           ))}
         </ol>
 
-        <p className="mt-5 rounded-lg bg-surface px-4 py-3 text-[14px] leading-snug text-muted">
+        <p className="mt-5 rounded-lg bg-elevated px-4 py-3 text-[14px] leading-snug text-muted">
           {config.success.note}
         </p>
       </div>
@@ -165,7 +165,7 @@ export function Quiz({
   const summary = step.showSummary === true ? renderSummary?.(state.answers) : null;
 
   return (
-    <div className="rounded-card border border-line bg-white p-5 shadow-sm sm:p-8">
+    <div className="rounded-card border border-line bg-panel p-5 shadow-sm sm:p-8">
       <ProgressBar
         current={stepNumber}
         total={total}
@@ -218,7 +218,7 @@ export function Quiz({
                   onSelect={handleChoice}
                 />
                 {state.errors[step.id] !== undefined && (
-                  <p className="mt-3 text-[14px] font-medium text-red-600">
+                  <p className="mt-3 text-[14px] font-medium text-danger">
                     {state.errors[step.id]}
                   </p>
                 )}
@@ -253,12 +253,12 @@ export function Quiz({
                 {state.status === "error" && (
                   <div
                     role="alert"
-                    className="mt-4 rounded-xl border border-red-200 bg-red-50 p-4"
+                    className="mt-4 rounded-xl border border-danger-line bg-danger-soft p-4"
                   >
-                    <p className="text-[15px] font-bold text-red-700">
+                    <p className="text-[15px] font-bold text-danger">
                       {config.ui.errorTitle}
                     </p>
-                    <p className="mt-1 text-[14px] leading-snug text-red-700/90">
+                    <p className="mt-1 text-[14px] leading-snug text-danger">
                       {config.ui.errorText}
                     </p>
                   </div>

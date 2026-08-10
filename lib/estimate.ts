@@ -44,7 +44,10 @@ export function calculateEstimate(answers: Answers): Estimate | null {
   };
 }
 
-/** 7020 → «7 020 ₽». Неразрывный пробел, чтобы сумма не рвалась переносом. */
-export function formatRub(value: number): string {
-  return `${value.toLocaleString("ru-RU").replace(/\s/g, " ")} ₽`;
-}
+/**
+ * Форматирование переехало в lib/format: неразрывный пробел должен жить
+ * в одном месте. Здесь была локальная копия с обычным пробелом перед знаком
+ * рубля — сумма рвалась переносом в узкой колонке. Реэкспорт, чтобы не
+ * править импорты по секциям.
+ */
+export { formatRub, formatNumber, withUnit } from "./format";

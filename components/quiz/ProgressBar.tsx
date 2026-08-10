@@ -14,6 +14,8 @@ export function ProgressBar({ current, total, label }: ProgressBarProps) {
         <span className="text-[13px] font-bold text-brand">{percent}%</span>
       </div>
 
+      {/* Дорожка прогресса — декоративная линия, а не контрол: здесь line
+          уместен, ужесточать до control не нужно */}
       <div
         className="h-1.5 w-full overflow-hidden rounded-full bg-line"
         role="progressbar"

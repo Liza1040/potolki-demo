@@ -33,19 +33,21 @@ export function ChoiceStepView({
 
               <span
                 className={
-                  "flex h-full items-start gap-3 rounded-xl border-2 bg-white p-4 " +
+                  "flex h-full items-start gap-3 rounded-xl border-2 bg-field p-4 " +
                   "transition-colors duration-150 " +
-                  "peer-focus-visible:ring-2 peer-focus-visible:ring-brand peer-focus-visible:ring-offset-2 " +
+                  "peer-focus-visible:ring-2 peer-focus-visible:ring-brand peer-focus-visible:ring-offset-2 peer-focus-visible:ring-offset-panel " +
+                  // control, а не line: граница здесь единственный признак
+                  // контрола, ей нужны 3:1 к фону (WCAG 1.4.11)
                   (checked
                     ? "border-brand bg-brand-soft"
-                    : "border-line hover:border-brand/40")
+                    : "border-control hover:border-brand/60")
                 }
               >
                 {option.icon !== undefined && (
                   <span
                     className={
                       "flex size-10 shrink-0 items-center justify-center rounded-lg " +
-                      (checked ? "bg-brand text-white" : "bg-surface text-brand")
+                      (checked ? "bg-brand text-on-brand" : "bg-elevated text-brand")
                     }
                   >
                     <Icon name={option.icon} className="size-5" />

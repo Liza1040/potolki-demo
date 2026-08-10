@@ -52,16 +52,18 @@ export function FormStepView({
                 onChange(field.id, next);
               }}
               className={
-                "h-13 min-h-12 w-full rounded-xl border-2 bg-white px-4 text-[16px] " +
+                "h-13 min-h-12 w-full rounded-xl border-2 bg-field px-4 text-[16px] " +
                 "font-medium text-ink outline-none transition-colors " +
-                "placeholder:text-muted/60 focus:border-brand " +
-                "disabled:bg-surface disabled:text-muted " +
-                (error !== undefined ? "border-red-500" : "border-line")
+                // Плейсхолдер без прозрачности: muted/60 на тёмной теме
+                // опускает контраст примерно до 3:1
+                "placeholder:text-muted focus:border-brand " +
+                "disabled:bg-elevated disabled:text-muted " +
+                (error !== undefined ? "border-danger-border" : "border-control")
               }
             />
 
             {error !== undefined && (
-              <p id={errorId} className="mt-1.5 text-[13px] font-medium text-red-600">
+              <p id={errorId} className="mt-1.5 text-[13px] font-medium text-danger">
                 {error}
               </p>
             )}

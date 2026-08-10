@@ -7,8 +7,7 @@
 **Стек:** Next.js 16 (App Router) · TypeScript (strict) · Tailwind CSS v4 ·
 без внешних runtime-зависимостей.
 
-**Живой деплой:** _(будет после публикации на Vercel)_ →
-`https://<будет-ссылка>`
+**Живой деплой:** https://potolki-demo.vercel.app
 
 ### Технический хайлайт: Lighthouse 50 → 98 на мобильном
 

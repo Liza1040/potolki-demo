@@ -51,3 +51,6 @@ scratchpad/
 # исходники фото до обработки — в репо едут только оптимизированные webp
 # из public/images/works/
 incoming-photos/
+
+# IDE
+.idea/
